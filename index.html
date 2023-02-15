@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+    <link rel="shortcut icon" href="./img/horca.png" type="image/x-icon">
+    <title>Juego del Ahorcado</title>
+    
+</head>
+<body>
+    <header>
+        <img class="logo" src="./img/Logo.png" alt="Logo de Alura" onclick="location.href='index.html'">
+        <h1>Juego del Ahorcado</h1>
+        <nav>
+            <a href="https://www.linkedin.com/in/veronic-diaz/" target="_blank"><img class="iconos" src="./img/linkedin.png" alt="icono linkedin"></a>
+            <a href="https://github.com/vero2504" target="_blank" ><img class="iconos" src="./img/github.png" alt="icono github"></a>
+        </nav>
+    
+    </header>
+    <main>
+
+        <div class="container">
+            <input class="btn-inicio" type="button" value="Iniciar Juego" onclick="iniciarJuego()"/>
+            <input class="btn-palabra" type="button" value="Nueva Palabra"  onclick="desplegarPopUp()"/>
+        </div>
+
+        <div class="popup-container">
+            <div id="pop-up">
+                <label for="input-word">Ingrese la palabra aqui:</label>
+                <input type="text" id="new-word">
+                <p id="advertencia"><i id="signo" class="fa-solid fa-circle-exclamation"></i>Max. 8 letras</p>
+                <div class="btn-popup">
+                    <input type="button"  value="Guardar" id="btn-guardar" onclick="agregarPalabra()">
+                    <input type="button"  value="Cerrar" id="btn-cancelar" onclick="cerrarPopUp()">
+                </div>
+            </div>
+        </div>
+       
+        <div id="canvas">
+            <canvas id="ahorcado" width="700" height="400"></canvas>
+            <input autofocus id="input-oculto" type="text">
+            <div class="game-buttons">
+                <input class="btn-reiniciar" type="button" value="Nuevo Juego" onclick="reiniciarJuego()"/>
+                <input class="btn-renunciar" type="button" value="Renunciar" onclick="reiniciarJuego()"/>
+            </div>
+        </div>
+
+        <div class="popup-container" id="ganaste">
+            <div class="aviso">
+               <h3>¡¡FELICITACIONES GANASTE!!</h3>
+               <img class="icono-animado" src="./img/fiesta.gif" alt="gif de festejo">
+            </div>
+        </div>
+
+        <div class="popup-container" id="perdiste">
+            <div class="aviso">
+               <h3>¡¡LO SIENTO PERDISTE!!</h3>
+               <img class="icono-animado" src="./img/triste.gif" alt="gif de tristeza">
+               <p id="p-palabra"></p>
+            </div>
+        </div>
+    </main>
+
+    <script src="./js/script.js"></script>
+   
+    <footer>
+        <p>&#169 2023 Veronica Diaz -- ChallengeahorcadoG3</p>
+    </footer>
+ 
+</body>
+</html>
